@@ -4,7 +4,6 @@ public class Bokning {
 
     int pris;
     int tid;
-    String kvitto;
 
     Scanner myScanner = new Scanner(System.in);
 
@@ -12,7 +11,7 @@ public class Bokning {
         klippning();
         färgning();
         datum();
-        //kvitto(); //länka till denhär i slutet av datum istället
+        kvitto();
     }
 
 
@@ -29,11 +28,9 @@ public class Bokning {
             if (frisyr == 1){
                 pris += 400;
                 tid += 30;
-                kvitto += "Klippning: ny frisyr (+600kr)";
             } else if (frisyr == 2){
                 pris += 200;
                 tid += 20;
-                kvitto += "Klippning: topparna (+400kr)";
             }
         } else if (klippning == 2) {
             färgning();
@@ -51,11 +48,9 @@ public class Bokning {
             if(färg == 1){
                 pris += 1000;
                 tid += 120;
-                kvitto += "Färgning: naturlig färg (+1000kr)";
             } else if (färg == 2){
                 pris += 2000;
                 tid += 120;
-                kvitto += "Färgning: onaturlig färg (+2000kr)";
             }
         } else if (färgning == 2){
             datum();
@@ -69,9 +64,8 @@ public class Bokning {
     public void kvitto(){
         System.out.println("Tack för din bokning! Här kommer ditt kvitto:");
 
-        if(){
+        System.out.println("Det kommer kosta totalt " + pris + "kr, och det kommer ta " + tid/60 + " timmar och " + tid%60 + " minuter");
 
-        }
     }
 
 }
