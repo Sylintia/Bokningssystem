@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Bokning {
@@ -5,6 +6,8 @@ public class Bokning {
     int pris;
     int tid;
 
+    boolean addToKvitto = false;
+    String[] kvitto;
     Scanner myScanner = new Scanner(System.in);
 
     public Bokning(){
@@ -28,6 +31,7 @@ public class Bokning {
             if (frisyr == 1){
                 pris += 400;
                 tid += 30;
+
             } else if (frisyr == 2){
                 pris += 200;
                 tid += 20;
