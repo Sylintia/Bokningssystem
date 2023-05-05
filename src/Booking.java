@@ -1,16 +1,15 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Bokning {
+public class Booking {
 
-    int pris;
-    int tid;
+    int price;
+    int time;
 
     boolean addToKvitto = false;
     String[] kvitto;
     Scanner myScanner = new Scanner(System.in);
 
-    public Bokning(){
+    public Booking(){
         klippning();
         färgning();
         datum();
@@ -24,17 +23,17 @@ public class Bokning {
         int klippning = myScanner.nextInt();
 
         if (klippning == 1){
-            pris += 200;
+            price += 200;
             System.out.println("Vill du klippa en ny frisyr, eller bara topparna? (1: ny frisyr, 2: topparna)");
             int frisyr = myScanner.nextInt();
 
             if (frisyr == 1){
-                pris += 400;
-                tid += 30;
+                price += 400;
+                time += 30;
 
             } else if (frisyr == 2){
-                pris += 200;
-                tid += 20;
+                price += 200;
+                time += 20;
             }
         } else if (klippning == 2) {
             färgning();
@@ -50,11 +49,11 @@ public class Bokning {
             int färg = myScanner.nextInt();
 
             if(färg == 1){
-                pris += 1000;
-                tid += 120;
+                price += 1000;
+                time += 120;
             } else if (färg == 2){
-                pris += 2000;
-                tid += 120;
+                price += 2000;
+                time += 120;
             }
         } else if (färgning == 2){
             datum();
@@ -68,7 +67,7 @@ public class Bokning {
     public void kvitto(){
         System.out.println("Tack för din bokning! Här kommer ditt kvitto:");
 
-        System.out.println("Det kommer kosta totalt " + pris + "kr, och det kommer ta " + tid/60 + " timmar och " + tid%60 + " minuter");
+        System.out.println("Det kommer kosta totalt " + price + "kr, och det kommer ta " + time /60 + " timmar och " + time %60 + " minuter");
 
     }
 
