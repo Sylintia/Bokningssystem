@@ -1,7 +1,9 @@
 public class Main {
     public static void main(String[] args) {
 
-        new Booking();
+        HairSalon hairSalon = new HairSalon("Salong Klippet");
+
+        hairSalon.createBooking();
 
     }
 }

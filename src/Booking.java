@@ -4,18 +4,32 @@ public class Booking {
 
     int price;
     int time;
-
+    HairSalon hairSalon;
+    Customer customer;
     boolean addToKvitto = false;
     String[] kvitto;
     Scanner myScanner = new Scanner(System.in);
 
-    public Booking(){
+    public Booking() {}
+
+
+    public Booking(HairSalon salon){
+        hairSalon = salon;
+        createCustomer();
         klippning();
         färgning();
         datum();
         kvitto();
     }
 
+    void createCustomer(){
+        customer = new Customer();
+        System.out.println("Hej och välkommen till " + hairSalon.name);
+        System.out.println(" ");
+        System.out.println("Vad heter du?");
+        customer.name = myScanner.nextLine();
+        System.out.println("Hej " + customer.name + ", vad kul att du kontaktar oss!");
+    }
 
     //Frågar om kunden vill klippa håret och ger olika förslag på klippningar
     public void klippning(){

@@ -6,15 +6,22 @@ public class Hairdresser extends Person {
 
     public WorkingHours workingHours;
 
-    public Hairdresser(int startWorkingTime, int endWorkingTime){
+    public Hairdresser(){
+
+    }
+
+    /*
+    public Hairdresser(int startWorkingTime, int endWorkingTime, String hairdresserName){
 
         workingHours = new WorkingHours();
 
         workingHours.startHour = startWorkingTime;
         workingHours.endHour = endWorkingTime;
 
-    }
+        name = hairdresserName;
 
+    }
+*/
 
 }
 
