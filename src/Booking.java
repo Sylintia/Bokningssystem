@@ -6,8 +6,7 @@ public class Booking {
     int time;
     HairSalon hairSalon;
     Customer customer;
-    boolean addToKvitto = false;
-    String[] kvitto;
+    int bookedTime;
     Scanner myScanner = new Scanner(System.in);
 
     public Booking() {}
@@ -22,6 +21,7 @@ public class Booking {
         kvitto();
     }
 
+    //Välkommnar kunden till salongen, och frågar efter kundens namn
     void createCustomer(){
         customer = new Customer();
         System.out.println("Hej och välkommen till " + hairSalon.name);
@@ -54,6 +54,7 @@ public class Booking {
         }
     }
 
+    //Frågar om kunden vill färga håret, om svaret är ja frågar det även om hen vill färga en naturlig eller onaturlig färg, medans om svaret är nej så kommer kunden tas vidar till nästa steg
     public void färgning(){
         System.out.println("Vill du färga håret? (1: Ja, 2: Nej)");
         int färgning = myScanner.nextInt();
@@ -74,14 +75,19 @@ public class Booking {
         }
     }
 
+    //Frågar vilken tid kunden vill boka
     public void datum(){
+
+        System.out.println("Vilken tid vill du boka?");
+        bookedTime = myScanner.nextInt();
 
     }
 
+    //Skriver ut ett kvitto, där det står vilken tid bokningen är på, samt hur mycket det kommer kosta och hur lång tid det kommer ta
     public void kvitto(){
         System.out.println("Tack för din bokning! Här kommer ditt kvitto:");
-
-        System.out.println("Det kommer kosta totalt " + price + "kr, och det kommer ta " + time /60 + " timmar och " + time %60 + " minuter");
+        System.out.println(" ");
+        System.out.println("Din bokade tid är klockan " + bookedTime + ", det kommer kosta totalt " + price + "kr, och det kommer ta " + time /60 + " timmar och " + time %60 + " minuter");
 
     }
 
