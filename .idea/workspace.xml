@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="241325a1-8064-4d8b-a752-b3c24e73fd9c" name="Changes" comment="hej">
+      <change afterPath="$PROJECT_DIR$/src/Hairdresser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WorkingHours.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HairSalon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HairSalon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hairdresser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WorkingHours.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,8 @@
       <workItem from="1682509957440" duration="3551000" />
       <workItem from="1683311195563" duration="3608000" />
       <workItem from="1683314853504" duration="3895000" />
-      <workItem from="1683397013084" duration="4302000" />
+      <workItem from="1683397013084" duration="4455000" />
+      <workItem from="1683402769392" duration="5591000" />
     </task>
     <task id="LOCAL-00001" summary="hej">
       <created>1679491286908</created>
@@ -126,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683318768205</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="hej">
+      <created>1683401448078</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683401448078</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,5 +152,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hej" />
     <option name="LAST_COMMIT_MESSAGE" value="hej" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Booking.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

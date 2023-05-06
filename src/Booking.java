@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Booking {
 
     int price;
-    int time;
     HairSalon hairSalon;
     Customer customer;
     int bookedTime;
+    Hairdresser selectedHairdresser;
     Scanner myScanner = new Scanner(System.in);
 
     public Booking() {}
@@ -33,6 +33,7 @@ public class Booking {
 
     //Frågar om kunden vill klippa håret och ger olika förslag på klippningar
     public void klippning(){
+        price = 0;
         System.out.println("Vill du klippa dig? (1: Ja, 2: Nej)");
         int klippning = myScanner.nextInt();
 
@@ -43,11 +44,9 @@ public class Booking {
 
             if (frisyr == 1){
                 price += 400;
-                time += 30;
 
             } else if (frisyr == 2){
                 price += 200;
-                time += 20;
             }
         } else if (klippning == 2) {
             färgning();
@@ -65,29 +64,40 @@ public class Booking {
 
             if(färg == 1){
                 price += 1000;
-                time += 120;
             } else if (färg == 2){
                 price += 2000;
-                time += 120;
             }
         } else if (färgning == 2){
             datum();
         }
     }
 
-    //Frågar vilken tid kunden vill boka
+    //Frågar vilken tid kunden vill boka, och baserat på svaret så kommer kunden bli tilldelad en av de 3 frisörerna. Det finns även en felsökning som gör att kunden inte kan boka en tid innan 8 eller efter 19.
     public void datum(){
 
-        System.out.println("Vilken tid vill du boka?");
+        System.out.println("Vi har öppet 8-20, vilken timme vill du komma? (8-19)");
         bookedTime = myScanner.nextInt();
+
+        if(bookedTime < 8 || bookedTime > 19){
+            System.out.println("Vi har inte öppet klockan " + bookedTime);
+            datum();
+        }
+
+        for(Hairdresser hairdresser : hairSalon.hairdressers){
+            if(hairdresser.workingHours.startTime <= bookedTime && bookedTime < hairdresser.workingHours.endTime){
+                selectedHairdresser = hairdresser;
+            }
+
+        }
 
     }
 
-    //Skriver ut ett kvitto, där det står vilken tid bokningen är på, samt hur mycket det kommer kosta och hur lång tid det kommer ta
+    //Skriver ut ett kvitto där det står vilken frisör kunden kommer bli tilldelad, vilken tid bokningen är på, samt hur mycket det kommer kosta
     public void kvitto(){
         System.out.println("Tack för din bokning! Här kommer ditt kvitto:");
         System.out.println(" ");
-        System.out.println("Din bokade tid är klockan " + bookedTime + ", det kommer kosta totalt " + price + "kr, och det kommer ta " + time /60 + " timmar och " + time %60 + " minuter");
+        System.out.println("Din frisör kommer vara " + selectedHairdresser.name);
+        System.out.println("Din bokade tid är klockan " + bookedTime + " och det kommer kosta totalt " + price);
 
     }
 
